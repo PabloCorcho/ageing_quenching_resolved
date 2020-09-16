@@ -18,8 +18,8 @@ from astropy.table import Table
 import matplotlib.pyplot as plt
 
 
-califa = fits.open('Ageing_Database51_EML_MAG.fits')
-sample_table = Table.read('sample_table.tex')
+califa = fits.open('data/Ageing_Database51_EML_MAG.fits')
+sample_table = Table.read('data/sample_table.tex')
 output_dir = '../paper/figures/'
 fig_base_size = 2  # inches
 
@@ -28,7 +28,7 @@ fig_base_size = 2  # inches
 # =============================================================================
 
 corr=3.0
-contour_file='fp_g_r_0.9_contour.fits'
+contour_file='data/fp_g_r_0.9_contour.fits'
 fp_data=fits.open(contour_file)
 fp=fp_data[0].data
 bingr=fp_data[1].data
@@ -41,7 +41,7 @@ levels=[level90]
 # 
 # =============================================================================
 
-califaid, g_sdss, r_sdss, ew_sdss = np.loadtxt('the_good_table_CALIFA_SDSS', usecols=(0, 8,9, 12), unpack=True)
+califaid, g_sdss, r_sdss, ew_sdss = np.loadtxt('data/the_good_table_CALIFA_SDSS', usecols=(0, 8,9, 12), unpack=True)
 
 califaid = np.array(califaid, dtype=int)
 # ew_sdss = 10**ew_sdss
